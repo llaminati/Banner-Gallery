@@ -5,12 +5,12 @@ CREATE DATABASE banner_images;
 USE banner_images;
 
 CREATE TABLE listing (
-  id int(100) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (ID)
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  listing varchar(5) NOT NULL
 );
 
 CREATE TABLE images (
-  id int NOT NULL AUTO_INCREMENT,
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   url varchar(2083) NOT NULL,
   description varchar(255),
   user_submit boolean,
@@ -19,5 +19,6 @@ CREATE TABLE images (
   inappropriate_flag int,
   dislike_flag int,
   listing_id int,
-  PRIMARY KEY (ID)
+  FOREIGN KEY (listing_id)
+  REFERENCES listing(id)
 );

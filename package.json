@@ -10,9 +10,9 @@
   "scripts": {
     "build": "npx webpack --config webpack.config.js -d -w",
     "test": "jest",
-    "sql": "mysql -u root -p < ./db/schema.sql",
-    "seed": "node ./db/seed.js",
-    "server": "nodemon ./server -w"
+    "server": "nodemon ./server -w",
+    "create": "mysql -u root -p < ./db/schema.sql",
+    "seed": "node ./db/seed.js"
   },
   "dependencies": {
     "express": "^4.17.1",
