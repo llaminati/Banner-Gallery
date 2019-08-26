@@ -6,14 +6,9 @@ const port = 3000;
 
 app.use(express.static(__dirname + 'public'));
 
-app.get('/api/L1/banner/images', (req, res) => {
-  // db.getListings((error, listing) => {
-  //   if (error) return error;
-  //   res.send(listing);
-  // });
-
-  db.getImages((error, images) => {
-    if (error) return error;
+app.get('/api/:listing/banner/images', (req, res) => {
+  db.getImagesFromListing(req.params.listing, (error, images) => {
+    if (error) { return error; }
     res.send(images);
   });
 });

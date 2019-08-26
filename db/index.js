@@ -4,21 +4,13 @@ const faker = require('faker');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const getListings = (cb) => {
-  connection.query('SELECT * FROM listing', (error, results) => {
-    if (error) return error;
+const getImagesFromListing = (listingId, cb) => {
+  connection.query('SELECT * FROM images WHERE listing_id IN (SELECT id FROM listing WHERE listing = ?)', [listingId], (error, results) => {
+    if (error) { console.log(error); }
     cb(null, results);
-  })
-};
-
-const getImages = (cb) => {
-  connection.query('SELECT * FROM images', (error, results) => {
-    if (error) return error;
-    cb(null, results);
-  })
+  });
 };
 
 module.exports = {
-  getListings,
-  getImages
-}
+  getImagesFromListing
+};

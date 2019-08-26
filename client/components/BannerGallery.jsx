@@ -7,7 +7,7 @@ class BannerGallery extends Component {
   }
 
   render() {
-    return ();
+    return;
   }
 }
 
