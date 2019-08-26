@@ -1,6 +1,6 @@
 {
   "name": "banner-gallery",
-  "version": "",
+  "version": "1.0.0",
   "description": "",
   "author": "Alvin Lo",
   "license": "",
@@ -10,8 +10,9 @@
   "scripts": {
     "build": "npx webpack --config webpack.config.js -d -w",
     "test": "jest",
-    "create": "mysql -u root -p < ./db/schema.sql",
-    "seed": "node ./db/index.js"
+    "sql": "mysql -u root -p < ./db/schema.sql",
+    "seed": "node ./db/seed.js",
+    "server": "nodemon ./server -w"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -28,6 +29,7 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "install": "^0.13.0",
     "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
     "npm": "^6.11.1",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
