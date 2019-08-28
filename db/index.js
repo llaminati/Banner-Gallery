@@ -5,7 +5,9 @@ const faker = require('faker');
 const connection = mysql.createConnection(mysqlConfig);
 
 const getImagesFromListing = (listingId, cb) => {
-  connection.query('SELECT * FROM images WHERE listing_id IN (SELECT id FROM listing WHERE listing = ?)', [listingId], (error, results) => {
+  listingId = Number(listingId.slice(1));
+
+  connection.query('SELECT * FROM images INNER JOIN listings_images ON images.id = listings_images.image_id WHERE listings_images.listing_id = ?', [listingId], (error, results) => {
     if (error) { console.log(error); }
     cb(null, results);
   });

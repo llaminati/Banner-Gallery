@@ -4,9 +4,9 @@ CREATE DATABASE banner_images;
 
 USE banner_images;
 
-CREATE TABLE listing (
+CREATE TABLE listings (
   id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  listing varchar(5) NOT NULL
+  listings varchar(5) NOT NULL
 );
 
 CREATE TABLE images (
@@ -17,8 +17,13 @@ CREATE TABLE images (
   date date,
   unrelated_flag int,
   inappropriate_flag int,
-  dislike_flag int,
-  listing_id int,
-  FOREIGN KEY (listing_id)
-  REFERENCES listing(id)
+  dislike_flag int
 );
+
+CREATE TABLE listings_images (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  listing_id int NOT NULL,
+  image_id int NOT NULL,
+  FOREIGN KEY (listing_id) REFERENCES listings(id),
+  FOREIGN KEY (image_id) REFERENCES images(id)
+)
