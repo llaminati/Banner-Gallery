@@ -1,13 +1,13 @@
-# Project Name
+# Banner Gallery
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/llaminati/Banner-Gallery
+  - https://github.com/llaminati/Menu
+  - https://github.com/llaminati/Reservations
+  - https://github.com/llaminati/Reviews
 
 ## Table of Contents
 
