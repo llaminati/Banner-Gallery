@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import Image from './Image.jsx';
+import GalleryImage from './GalleryImage.jsx';
 
 const Gallery = styled.div`
   width: 1600px;
@@ -36,7 +36,7 @@ class BannerGallery extends React.Component {
   render() {
     return (
       <Gallery>
-        {this.state.images.map((image, i) => <Image key={i} image={image}/>)}
+        {this.state.images.map((image, i) => <GalleryImage key={i} image={image}/>)}
       </Gallery>
     );
   }

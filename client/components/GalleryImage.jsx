@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Modal from './Modal.jsx';
+import ImageModal from './ImageModal.jsx';
 
-class Image extends React.Component {
+class GalleryImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +30,7 @@ class Image extends React.Component {
           onClick={this.openModal}
         ></img>
         {this.state.modalIsOpen &&
-        <Modal
+        <ImageModal
           image={this.props.image}
           closeModal={this.closeModal}
         />}
@@ -39,4 +39,4 @@ class Image extends React.Component {
   }
 }
 
-export default Image;
+export default GalleryImage;
