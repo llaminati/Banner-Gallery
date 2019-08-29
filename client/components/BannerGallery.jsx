@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import Image from './components/Image.jsx';
+import Image from './Image.jsx';
 
 const Gallery = styled.div`
   width: 1600px;
@@ -42,4 +42,4 @@ class BannerGallery extends React.Component {
   }
 }
 
-ReactDOM.render(<BannerGallery />, document.getElementById('app'));
+export default BannerGallery;
