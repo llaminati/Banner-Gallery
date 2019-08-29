@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import Image from '../client/components/Image.jsx';
+import GalleryImage from '../client/components/GalleryImage.jsx';
 
 const imageData = {
   'id': 34,
@@ -17,14 +17,14 @@ const imageData = {
   'image_id': 14
 };
 
-describe('Image component', () => {
+describe('GalleryImage component', () => {
   test('renders without issue', () => {
-    const wrapper = shallow(<Image image={imageData}/>);
+    const wrapper = shallow(<GalleryImage image={imageData}/>);
     expect(wrapper.exists()).toBe(true);
   });
 
   test('should update state', () => {
-    const wrapper = shallow(<Image image={imageData}/>);
+    const wrapper = shallow(<GalleryImage image={imageData}/>);
     const instance = wrapper.instance();
     instance.openModal();
     expect(wrapper.state('modalIsOpen')).toBe(true);
