@@ -12,7 +12,7 @@
     "start": "nodemon server/index.js -w",
     "create": "mysql -u root -p < ./db/schema.sql",
     "seed": "node ./db/seed.js",
-    "test": "jest --coverage --verbose --watch"
+    "test": "jest --coverage --verbose"
   },
   "dependencies": {
     "axios": "^0.19.0",
