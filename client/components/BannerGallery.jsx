@@ -1,17 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
 import GalleryImage from './GalleryImage.jsx';
 
 const Gallery = styled.div`
-  width: 1600px;
+  width: 1598px;
   height: 288px;
-  display: flex;
   justify-content: center;
+  display: flex;
   background-color: #2d333f;
 `;
+
 
 class BannerGallery extends React.Component {
   constructor(props) {
@@ -36,7 +36,19 @@ class BannerGallery extends React.Component {
   render() {
     return (
       <Gallery>
-        {this.state.images.map((image, i) => <GalleryImage key={i} image={image}/>)}
+        <div>
+          {this.state.images.slice(0, 2).map((image, i) => <GalleryImage key={i} imageSize={'small'} image={image}/>)}
+        </div>
+        {this.state.images.slice(2, 3).map((image, i) => <GalleryImage key={i} imageSize={'large'} image={image}/>)}
+        <div>
+          {this.state.images.slice(3, 5).map((image, i) => <GalleryImage key={i} imageSize={'small'} image={image}/>)}
+        </div>
+        {this.state.images.slice(5, 6).map((image, i) => <GalleryImage key={i} imageSize={'large'} image={image}/>)}
+        <div>
+          {this.state.images.slice(6, 8).map((image, i) => <GalleryImage key={i} imageSize={'small'} image={image}/>)}
+        </div>
+        {this.state.images.slice(8, 9).map((image, i) => <GalleryImage key={i} imageSize={'large'} image={image}/>)}
+        {this.state.images.slice(9, 10).map((image, i) => <GalleryImage key={i} imageSize={'large'} image={image}/>)}
       </Gallery>
     );
   }
