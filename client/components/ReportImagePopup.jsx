@@ -18,6 +18,7 @@ const ReportPopup = styled.div`
 `;
 
 const ReportHeader = styled.h4`
+  font-family: Brandon-Text-Medium;
   font-size: 1.25rem;
   padding: 1rem;
   border-bottom-color: rgba(0,0,0,.0784314);
@@ -28,11 +29,12 @@ const ReportHeader = styled.h4`
 `;
 
 const SharedButtonStyle = styled.button`
+  font-family: Brandon-Text-Regular;
   display: block;
   font-size: 16px;
   font-weight: 400;
   width: 90%;
-  margin: 5px auto;
+  margin: 4px auto;
   padding: .6rem 1.75rem;
   text-align: center;
   border-radius: 3px;

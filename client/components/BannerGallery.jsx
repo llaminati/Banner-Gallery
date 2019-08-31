@@ -1,9 +1,27 @@
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
+import BrandonTextRegular from '../fonts/BrandonText-Regular.otf';
+import BrandonTextMedium from '../fonts/BrandonText-Medium.otf';
+import BrandonTextBold from '../fonts/BrandonText-Bold.otf';
 import GalleryImage from './GalleryImage.jsx';
 import ImageModal from './ImageModal.jsx';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: Brandon-Text-Regular;
+    src: url('${BrandonTextRegular}') format('opentype');
+  }
+  @font-face {
+    font-family: Brandon-Text-Medium;
+    src: url('${BrandonTextMedium}') format('opentype');
+  }
+  @font-face {
+    font-family: Brandon-Text-Bold;
+    src: url('${BrandonTextBold}') format('opentype');
+  }
+`;
 
 const Gallery = styled.div`
   width: 1598px;
@@ -12,7 +30,6 @@ const Gallery = styled.div`
   display: flex;
   background-color: #2d333f;
 `;
-
 
 class BannerGallery extends React.Component {
   constructor(props) {
@@ -77,6 +94,7 @@ class BannerGallery extends React.Component {
   render() {
     return (
       <Gallery>
+        <GlobalStyle />
         {this.state.modal &&
           <ImageModal
             image={this.state.modal}

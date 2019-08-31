@@ -5,7 +5,7 @@ import ImageDescription from './ImageDescription.jsx';
 
 const ImageFooterContainer = styled.div`
   position: relative;
-  margin: 8px 0 0;
+  margin: 4px 0 0;
   color: #fff;
   display: flex;
   justify-content: space-between;
