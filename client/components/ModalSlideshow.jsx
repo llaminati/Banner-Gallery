@@ -26,15 +26,19 @@ const LeftArrow = styled(ScrollArrow)`
   left: 0;
 `;
 
-const ModalSlideshow = ({ image, openReportImagePopup }) => {
+const ModalSlideshow = ({ image, openReportImagePopup, changeLeftModal, changeRightModal }) => {
   return (
     <Slideshow>
-      <LeftArrow>{'<'}</LeftArrow>
+      <LeftArrow
+        onClick={() => changeLeftModal()}
+      >{'<'}</LeftArrow>
       <SlideshowImage
         image={image}
         openReportImagePopup={openReportImagePopup}
       />
-      <RightArrow>{'>'}</RightArrow>
+      <RightArrow
+        onClick={() => changeRightModal()}
+      >{'>'}</RightArrow>
     </Slideshow>
   );
 };

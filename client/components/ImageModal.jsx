@@ -82,6 +82,8 @@ class ImageModal extends React.Component {
           <ModalSlideshow
             image={this.props.image}
             openReportImagePopup={this.openReportImagePopup}
+            changeLeftModal={this.props.changeLeftModal}
+            changeRightModal={this.props.changeRightModal}
           />
         </ImageInfo>
       </ModalContainer>

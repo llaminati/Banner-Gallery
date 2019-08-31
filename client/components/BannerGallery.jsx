@@ -24,6 +24,8 @@ class BannerGallery extends React.Component {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.changeLeftModal = this.changeLeftModal.bind(this);
+    this.changeRightModal = this.changeRightModal.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +48,32 @@ class BannerGallery extends React.Component {
     this.setState({ modal: null });
   }
 
+  changeLeftModal() {
+    let images = this.state.images;
+    let modal = this.state.modal;
+
+    for (var i = 0; i < images.length; i++) {
+      if (images[i].id === modal.id) {
+        if (images[i - 1] !== undefined) {
+          this.setState({ modal: images[i - 1] });
+        }
+      }
+    }
+  }
+
+  changeRightModal() {
+    let images = this.state.images;
+    let modal = this.state.modal;
+
+    for (var i = 0; i < images.length; i++) {
+      if (images[i].id === modal.id) {
+        if (images[i + 1] !== undefined) {
+          this.setState({ modal: images[i + 1] });
+        }
+      }
+    }
+  }
+
   render() {
     return (
       <Gallery>
@@ -53,6 +81,8 @@ class BannerGallery extends React.Component {
           <ImageModal
             image={this.state.modal}
             closeModal={this.closeModal}
+            changeRightModal={this.changeRightModal}
+            changeLeftModal={this.changeLeftModal}
           />
         }
         <div>
