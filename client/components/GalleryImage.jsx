@@ -20,16 +20,11 @@ class GalleryImage extends React.Component {
       modalIsOpen: false
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
   }
 
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
+  handleOpenModal() {
+    this.props.openModal(this.props.image);
   }
 
   render() {
@@ -38,17 +33,11 @@ class GalleryImage extends React.Component {
         {this.props.imageSize === 'small' ?
           <SmallImage
             src={this.props.image.url}
-            onClick={this.openModal}
+            onClick={() => this.handleOpenModal()}
           /> :
           <LargeImage
             src={this.props.image.url}
-            onClick={this.openModal}
-          />
-        }
-        {this.state.modalIsOpen &&
-          <ImageModal
-            image={this.props.image}
-            closeModal={this.closeModal}
+            onClick={() => this.handleOpenModal()}
           />
         }
       </div>
