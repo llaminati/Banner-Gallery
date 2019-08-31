@@ -22,7 +22,6 @@ class GalleryImage extends React.Component {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.handleGalleryPosition = this.handleGalleryPosition.bind(this);
   }
 
   openModal() {
@@ -33,23 +32,25 @@ class GalleryImage extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
-  handleGalleryPosition() {
-    if (this.props.imageSize === 'small') {
-      return <SmallImage src={this.props.image.url} onClick={this.openModal} />;
-    } else {
-      return <LargeImage src={this.props.image.url} onClick={this.openModal} />;
-    }
-  }
-
   render() {
     return (
       <div>
-        {this.handleGalleryPosition()}
+        {this.props.imageSize === 'small' ?
+          <SmallImage
+            src={this.props.image.url}
+            onClick={this.openModal}
+          /> :
+          <LargeImage
+            src={this.props.image.url}
+            onClick={this.openModal}
+          />
+        }
         {this.state.modalIsOpen &&
-        <ImageModal
-          image={this.props.image}
-          closeModal={this.closeModal}
-        />}
+          <ImageModal
+            image={this.props.image}
+            closeModal={this.closeModal}
+          />
+        }
       </div>
     );
   }

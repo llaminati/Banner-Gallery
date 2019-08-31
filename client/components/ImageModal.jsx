@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ReportImagePopup from './ReportImagePopup.jsx';
-import ImageDescription from './ImageDescription.jsx';
+import ModalSlideshow from './ModalSlideshow.jsx';
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -24,18 +24,11 @@ const CloseModal = styled.button`
   cursor: pointer;
 
   &::before {
-    font-family: icons;
-    speak: none;
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    content: 'U';
+    content: 'X';
     color: #6f737b;
     font-size: 1.2rem;
     line-height: 2;
     position: absolute;
-    text-align: center;
     top: 16px;
     right: 16px;
     width: 2rem;
@@ -86,7 +79,7 @@ class ImageModal extends React.Component {
           <ReportImagePopup
             closeReportImagePopup={this.closeReportImagePopup}
           />}
-          <ImageDescription
+          <ModalSlideshow
             image={this.props.image}
             openReportImagePopup={this.openReportImagePopup}
           />
