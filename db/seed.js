@@ -15,8 +15,12 @@ const seedListings = () => {
 const seedImages = () => {
   for (var i = 1; i <= 100; i++) {
     let imageUrl = `https://llaminati-images.s3-us-west-1.amazonaws.com/${i}.jpg`;
+    let words = faker.lorem.words();
+    words = words.split(' ');
+    words = words.map(word => word[0].toUpperCase() + word.substr(1));
+    words = words.join(' ');
 
-    connection.query('INSERT INTO images (url, description, user_submit, date, unrelated_flag, inappropriate_flag, dislike_flag) VALUE (?, ?, ?, ?, ?, ?, ?)', [imageUrl, faker.lorem.words(), faker.random.boolean(), faker.date.past(), 0, 0, 0], (error, results) => {
+    connection.query('INSERT INTO images (url, description, user_submit, date, unrelated_flag, inappropriate_flag, dislike_flag) VALUE (?, ?, ?, ?, ?, ?, ?)', [imageUrl, words, faker.random.boolean(), faker.date.past(), 0, 0, 0], (error, results) => {
       if (error) { console.log(error); }
     });
   }

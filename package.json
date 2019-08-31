@@ -36,6 +36,7 @@
     "jest-enzyme": "^7.1.0",
     "nodemon": "^1.19.1",
     "npm": "^6.11.1",
+    "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   }
