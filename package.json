@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npx webpack --config webpack.config.js -d -w",
     "start": "nodemon server/index.js -w",
-    "create": "mysql -u root -p < ./db/schema.sql",
+    "create": "mysql -u root < ./db/schema.sql",
     "seed": "node ./db/seed.js",
     "test": "jest --coverage --verbose"
   },
