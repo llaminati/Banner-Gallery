@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../db/index.js');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use('/:listing/banner/images', express.static(__dirname + '/../public'));
 
