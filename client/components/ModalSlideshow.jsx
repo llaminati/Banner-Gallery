@@ -1,16 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-
 import SlideshowImage from './SlideshowImage.jsx';
 
-const Slideshow = styled.div`
+const Slideshow = window.styled.div`
   position: relative;
   width: 660px;
   display: flex;
   justify-content: center;
 `;
 
-const ScrollArrow = styled.div`
+const ScrollArrow = window.styled.div`
   color: #91949a;
   font-size: 1.2rem;
   position: absolute;
@@ -18,11 +16,11 @@ const ScrollArrow = styled.div`
   cursor: pointer;
 `;
 
-const RightArrow = styled(ScrollArrow)`
+const RightArrow = window.styled(ScrollArrow)`
   right: 0;
 `;
 
-const LeftArrow = styled(ScrollArrow)`
+const LeftArrow = window.styled(ScrollArrow)`
   left: 0;
 `;
 
