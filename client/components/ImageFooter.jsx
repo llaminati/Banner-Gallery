@@ -1,9 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-
 import ImageDescription from './ImageDescription.jsx';
 
-const ImageFooterContainer = styled.div`
+const ImageFooterContainer = window.styled.div`
   position: relative;
   margin: 4px 0 0;
   color: #fff;
@@ -11,7 +9,7 @@ const ImageFooterContainer = styled.div`
   justify-content: space-between;
 `;
 
-const ReportIcon = styled.svg`
+const ReportIcon = window.styled.svg`
   width: 24px;
   height: 24px;
 `;

@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-
 import ReportImagePopup from './ReportImagePopup.jsx';
 import ModalSlideshow from './ModalSlideshow.jsx';
 
-const ModalContainer = styled.div`
+const ModalContainer = window.styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +12,7 @@ const ModalContainer = styled.div`
   z-index: 1001;
 `;
 
-const CloseModal = styled.button`
+const CloseModal = window.styled.button`
   position: absolute;
   padding: 25px;
   right: 0;
@@ -35,7 +33,7 @@ const CloseModal = styled.button`
   }
 `;
 
-const ImageInfo = styled.div`
+const ImageInfo = window.styled.div`
   width: 715px;
   margin: 35px auto 0 auto;
   z-index: 1002;

@@ -1,14 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import styled, { createGlobalStyle } from 'styled-components';
-
 import BrandonTextRegular from '../fonts/BrandonText-Regular.otf';
 import BrandonTextMedium from '../fonts/BrandonText-Medium.otf';
 import BrandonTextBold from '../fonts/BrandonText-Bold.otf';
 import GalleryImage from './GalleryImage.jsx';
 import ImageModal from './ImageModal.jsx';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = styled.createGlobalStyle`
   @font-face {
     font-family: Brandon-Text-Regular;
     src: url('${BrandonTextRegular}') format('opentype');
@@ -23,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Gallery = styled.div`
+const Gallery = window.styled.div`
   width: 1598px;
   height: 288px;
   justify-content: center;

@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const ReportPopup = styled.div`
+const ReportPopup = window.styled.div`
   position: absolute;
   width: 25rem;
   right: 0;
@@ -17,7 +16,7 @@ const ReportPopup = styled.div`
   padding-bottom: 16px;
 `;
 
-const ReportHeader = styled.h4`
+const ReportHeader = window.styled.h4`
   font-family: Brandon-Text-Medium;
   font-size: 1.25rem;
   padding: 1rem;
@@ -28,7 +27,7 @@ const ReportHeader = styled.h4`
   margin: 0;
 `;
 
-const SharedButtonStyle = styled.button`
+const SharedButtonStyle = window.styled.button`
   font-family: Brandon-Text-Regular;
   display: block;
   font-size: 16px;
@@ -42,14 +41,14 @@ const SharedButtonStyle = styled.button`
   border: 0;
 `;
 
-const ReportButton = styled(SharedButtonStyle)`
+const ReportButton = window.styled(SharedButtonStyle)`
   background-color: #61bddb;
   border-color: #2b9abf;
   color: #fff;
   border-width: 0;
 `;
 
-const ReportCancel = styled(SharedButtonStyle)`
+const ReportCancel = window.styled(SharedButtonStyle)`
   background-color: #fff;
   border-color: #2b9abf;
   color: #2b9abf;
