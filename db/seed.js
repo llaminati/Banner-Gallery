@@ -30,8 +30,8 @@ const seedListingsImages = () => {
   let amountOfImages = 0;
 
   while (amountOfImages < 1000) {
-    let randListingId = Math.floor(Math.random() * 100);
-    let randImageId = Math.floor(Math.random() * 100);
+    let randListingId = Math.floor(Math.random() * 101);
+    let randImageId = Math.floor(Math.random() * 101);
 
     if (randListingId === 0) { randListingId++; }
     if (randImageId === 0) { randImageId++; }

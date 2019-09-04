@@ -37,3 +37,16 @@ npm install -g webpack
 npm install
 ```
 
+### Seeding database
+
+```sh
+npm run create
+npm run seed
+```
+
+### Starting webpack and run server
+
+```sh
+npm run build
+npm run start
+```

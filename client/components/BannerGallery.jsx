@@ -22,8 +22,10 @@ const GlobalStyle = styled.createGlobalStyle`
 `;
 
 const Gallery = window.styled.div`
-  width: 1598px;
-  height: 288px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 1598px;
+  max-height: 288px;
   justify-content: center;
   display: flex;
   background-color: #2d333f;
@@ -44,8 +46,12 @@ class BannerGallery extends React.Component {
   }
 
   componentDidMount() {
-    let url = window.location.href;
-    let listing = url.slice(-3, -1);
+    let url = window.location.pathname;
+    let listing = url.slice(1, -1);
+
+    if (Number(listing.slice(1)) <= 0 || Number(listing.slice(1)) >= 100) {
+      listing = 'L1';
+    }
 
     axios.get(`http://localhost:3001/api/${listing}`)
       .then((res) => {
