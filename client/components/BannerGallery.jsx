@@ -22,12 +22,11 @@ const GlobalStyle = styled.createGlobalStyle`
 `;
 
 const Gallery = window.styled.div`
-  width: fit-content;
-  height: fit-content;
-  max-width: 1598px;
-  max-height: 288px;
-  justify-content: center;
+  width: 1598px;
+  height: 288px;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #2d333f;
 `;
 
