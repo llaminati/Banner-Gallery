@@ -22,8 +22,8 @@ const GlobalStyle = styled.createGlobalStyle`
 `;
 
 const Gallery = window.styled.div`
-  width: 1598px;
-  height: 288px;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   margin-left: auto;
   margin-right: auto;
