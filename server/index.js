@@ -1,9 +1,11 @@
 const express = require('express');
+const compression = require('compression')
 const db = require('../db/index.js');
 
 const app = express();
 const port = 3001;
 
+app.use(compression());
 app.use(express.static('public'));
 app.use('/:listing', express.static('public'));
 
