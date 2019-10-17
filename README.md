@@ -2,6 +2,8 @@
 
 > Project description
 
+Created a full stack applications for a restaurant reservations page
+
 ## Related Projects
 
   - https://github.com/llaminati/Banner-Gallery
@@ -21,10 +23,7 @@
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
 
 ## Development
 
@@ -33,7 +32,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
 ```
 
@@ -44,7 +42,7 @@ npm run create
 npm run seed
 ```
 
-### Starting webpack and run server
+### Starting webpack and server
 
 ```sh
 npm run build
