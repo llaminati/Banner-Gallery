@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import ReportImagePopup from './ReportImagePopup.jsx';
-import ModalSlideshow from './ModalSlideshow.jsx';
+import ReportImagePopup from './ReportImagePopup';
+import ModalSlideshow from './ModalSlideshow';
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -53,11 +54,11 @@ class ImageModal extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.openReportImagePopup = this.openReportImagePopup.bind(this);
     this.closeReportImagePopup = this.closeReportImagePopup.bind(this);
-
   }
 
   handleCloseModal() {
-    this.props.closeModal();
+    const { closeModal } = this.props;
+    closeModal();
   }
 
   openReportImagePopup() {
@@ -69,21 +70,18 @@ class ImageModal extends React.Component {
   }
 
   render() {
+    const { reportIsPopup } = this.state;
+    const { image, changeLeftModal, changeRightModal } = this.props;
     return (
       <ModalContainer>
-        <CloseModal
-          onClick={this.handleCloseModal}
-        ></CloseModal>
+        <CloseModal onClick={this.handleCloseModal} />
         <ImageInfo>
-          {this.state.reportIsPopup &&
-          <ReportImagePopup
-            closeReportImagePopup={this.closeReportImagePopup}
-          />}
+          {reportIsPopup && <ReportImagePopup closeReportImagePopup={this.closeReportImagePopup} />}
           <ModalSlideshow
-            image={this.props.image}
+            image={image}
             openReportImagePopup={this.openReportImagePopup}
-            changeLeftModal={this.props.changeLeftModal}
-            changeRightModal={this.props.changeRightModal}
+            changeLeftModal={changeLeftModal}
+            changeRightModal={changeRightModal}
           />
         </ImageInfo>
       </ModalContainer>
@@ -92,3 +90,21 @@ class ImageModal extends React.Component {
 }
 
 export default ImageModal;
+
+ImageModal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  changeLeftModal: PropTypes.func.isRequired,
+  changeRightModal: PropTypes.func.isRequired,
+  image: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    dislike_flag: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    image_id: PropTypes.number.isRequired,
+    inappropriate_flag: PropTypes.number.isRequired,
+    listing_id: PropTypes.number.isRequired,
+    unrelated_flag: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired,
+    user_submit: PropTypes.bool.isRequired,
+  }).isRequired,
+};

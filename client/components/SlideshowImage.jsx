@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import ImageFooter from './ImageFooter.jsx';
+import ImageFooter from './ImageFooter';
 
 const Image = styled.img`
   width: 526px;
@@ -15,7 +16,7 @@ const SlideshowImage = ({ image, openReportImagePopup }) => {
 
   return (
     <ImageContainer image={image}>
-      <Image src={image.url}></Image>
+      <Image src={image.url} />
       <ImageFooter
         image={image}
         openReportImagePopup={openReportImagePopup}
@@ -25,3 +26,19 @@ const SlideshowImage = ({ image, openReportImagePopup }) => {
 };
 
 export default SlideshowImage;
+
+SlideshowImage.propTypes = {
+  openReportImagePopup: PropTypes.func.isRequired,
+  image: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    dislike_flag: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    image_id: PropTypes.number.isRequired,
+    inappropriate_flag: PropTypes.number.isRequired,
+    listing_id: PropTypes.number.isRequired,
+    unrelated_flag: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired,
+    user_submit: PropTypes.bool.isRequired,
+  }).isRequired,
+};
