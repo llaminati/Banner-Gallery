@@ -2,7 +2,7 @@ const express = require('express');
 const compression = require('compression')
 const db = require('../db/index.js');
 
-const app = express();
+const app = express({strict: true});
 const port = 3001;
 
 app.use(compression());

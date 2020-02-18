@@ -1,12 +1,13 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  entry: './client/components/BannerGallery.jsx',
+  mode: 'development',
+  entry: './client/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
-    library: 'BannerGallery',
+    // library: 'BannerGallery',
   },
   module: {
     rules: [
@@ -28,5 +29,9 @@ module.exports = {
       },
     ]
   },
-  plugins: [new UglifyJsPlugin()]
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+  watch: true,
 };
