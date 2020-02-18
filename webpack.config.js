@@ -3,11 +3,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './client/index.js',
+  entry: './client/index.jsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
-    // library: 'BannerGallery',
   },
   module: {
     rules: [
@@ -17,9 +16,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.otf$/,
@@ -27,7 +26,10 @@ module.exports = {
           loader: 'url-loader',
         },
       },
-    ]
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   optimization: {
     minimize: true,

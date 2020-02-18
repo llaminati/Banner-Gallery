@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ReportPopup = styled.div`
   position: absolute;
@@ -59,15 +60,14 @@ const ReportCancel = styled(SharedButtonStyle)`
 class ReportImagePopup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      popupIsOpen: false,
-    };
+    this.state = {};
 
     this.handleReportImagePopup = this.handleReportImagePopup.bind(this);
   }
 
   handleReportImagePopup() {
-    this.props.closeReportImagePopup();
+    const { closeReportImagePopup } = this.props;
+    closeReportImagePopup();
   }
 
   render() {
@@ -76,13 +76,15 @@ class ReportImagePopup extends React.Component {
         <ReportHeader>Report a photo problem</ReportHeader>
         <ReportButton>Unrelated to restaurant</ReportButton>
         <ReportButton>Inappropriate content</ReportButton>
-        <ReportButton>I don't like this photo</ReportButton>
-        <ReportCancel
-          onClick={this.handleReportImagePopup}
-        >Cancel</ReportCancel>
+        <ReportButton>I don&apos;t like this photo</ReportButton>
+        <ReportCancel onClick={this.handleReportImagePopup}>Cancel</ReportCancel>
       </ReportPopup>
     );
   }
 }
 
 export default ReportImagePopup;
+
+ReportImagePopup.propTypes = {
+  closeReportImagePopup: PropTypes.func.isRequired,
+};

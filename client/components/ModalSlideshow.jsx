@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import SlideshowImage from './SlideshowImage.jsx';
+import SlideshowImage from './SlideshowImage';
 
 const Slideshow = styled.div`
   position: relative;
@@ -26,21 +27,35 @@ const LeftArrow = styled(ScrollArrow)`
   left: 0;
 `;
 
-const ModalSlideshow = ({ image, openReportImagePopup, changeLeftModal, changeRightModal }) => {
-  return (
-    <Slideshow>
-      <LeftArrow
-        onClick={() => changeLeftModal()}
-      >{'<'}</LeftArrow>
-      <SlideshowImage
-        image={image}
-        openReportImagePopup={openReportImagePopup}
-      />
-      <RightArrow
-        onClick={() => changeRightModal()}
-      >{'>'}</RightArrow>
-    </Slideshow>
-  );
-};
+const ModalSlideshow = ({
+  image, openReportImagePopup, changeLeftModal, changeRightModal,
+}) => (
+  <Slideshow>
+    <LeftArrow onClick={() => changeLeftModal()}>{'<'}</LeftArrow>
+    <SlideshowImage
+      image={image}
+      openReportImagePopup={openReportImagePopup}
+    />
+    <RightArrow onClick={() => changeRightModal()}>{'>'}</RightArrow>
+  </Slideshow>
+);
 
 export default ModalSlideshow;
+
+ModalSlideshow.propTypes = {
+  openReportImagePopup: PropTypes.func.isRequired,
+  changeLeftModal: PropTypes.func.isRequired,
+  changeRightModal: PropTypes.func.isRequired,
+  image: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    dislike_flag: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    image_id: PropTypes.number.isRequired,
+    inappropriate_flag: PropTypes.number.isRequired,
+    listing_id: PropTypes.number.isRequired,
+    unrelated_flag: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired,
+    user_submit: PropTypes.bool.isRequired,
+  }).isRequired,
+};
