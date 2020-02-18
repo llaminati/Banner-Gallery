@@ -1,12 +1,14 @@
 import React from 'react';
+import styled from 'styled-components'
+
 import ImageModal from './ImageModal.jsx';
 
-const SmallImage = window.styled.img`
+const SmallImage = styled.img`
   width: 142px;
   margin: 0 0 0 .25rem;
 `;
 
-const LargeImage = window.styled.img`
+const LargeImage = styled.img`
   width: 288px;
   margin: 0 0 0 .25rem;
 `;

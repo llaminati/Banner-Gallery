@@ -1,6 +1,7 @@
 import React from 'react';
+import styled from 'styled-components'
 
-const FooterText = window.styled.div`
+const FooterText = styled.div`
   font-family: Brandon-Text-Regular;
   float: left;
   max-width: 90%;
@@ -8,20 +9,20 @@ const FooterText = window.styled.div`
   height: 18px;
 `;
 
-const CircleIcon = window.styled.div`
+const CircleIcon = styled.div`
   float: left;
 `;
 
-const DescriptionContainer = window.styled.div`
+const DescriptionContainer = styled.div`
   margin-left: 3.5em;
   padding-top: .5em;
 `;
 
-const Description = window.styled.strong`
+const Description = styled.strong`
   font-family: Brandon-Text-Medium;
 `;
 
-const DineInfo = window.styled.div`
+const DineInfo = styled.div`
   padding-top: .3em;
 `;
 

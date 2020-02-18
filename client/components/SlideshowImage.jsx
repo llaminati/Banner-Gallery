@@ -1,7 +1,9 @@
 import React from 'react';
+import styled from 'styled-components'
+
 import ImageFooter from './ImageFooter.jsx';
 
-const Image = window.styled.img`
+const Image = styled.img`
   width: 526px;
   margin: 0 32px 0 32px;
 `;

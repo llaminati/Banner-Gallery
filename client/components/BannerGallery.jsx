@@ -1,12 +1,14 @@
 import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components'
 import axios from 'axios';
+
 import BrandonTextRegular from '../fonts/BrandonText-Regular.otf';
 import BrandonTextMedium from '../fonts/BrandonText-Medium.otf';
 import BrandonTextBold from '../fonts/BrandonText-Bold.otf';
 import GalleryImage from './GalleryImage.jsx';
 import ImageModal from './ImageModal.jsx';
 
-const GlobalStyle = styled.createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Brandon-Text-Regular;
     src: url('${BrandonTextRegular}') format('opentype');
@@ -21,7 +23,7 @@ const GlobalStyle = styled.createGlobalStyle`
   }
 `;
 
-const Gallery = window.styled.div`
+const Gallery = styled.div`
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -52,7 +54,9 @@ class BannerGallery extends React.Component {
       listing = 'L1';
     }
 
-    axios.get(`http://54.241.154.11:3001/api/${listing}`)
+    console.log(listing)
+
+    axios.get(`/api/${listing}`)
       .then((res) => {
         this.setState({
           images: res.data
