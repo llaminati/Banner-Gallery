@@ -12,6 +12,7 @@
     "start": "nodemon server/index.js",
     "create": "mysql -u root < ./db/schema.sql",
     "seed": "node ./db/seed.js",
+    "dev": "npm run seed && npm run start",
     "test": "jest --coverage --verbose"
   },
   "dependencies": {

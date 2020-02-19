@@ -1,5 +1,6 @@
 module.exports = {
+  host: '172.18.0.2',
   user: 'root',
-  password: '',
-  database: 'banner_images'
+  password: 'password',
+  database: 'banner_images',
 };

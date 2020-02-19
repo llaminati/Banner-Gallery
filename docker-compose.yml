@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: app
+    container_name: app
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    command: ./wait-for-it.sh mysql:3306 -- npm run dev
+
+  database:
+    build: ./db
+    image: database
+    container_name: database
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
