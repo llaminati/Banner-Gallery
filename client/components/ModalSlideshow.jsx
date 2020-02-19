@@ -56,6 +56,6 @@ ModalSlideshow.propTypes = {
     listing_id: PropTypes.number.isRequired,
     unrelated_flag: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
-    user_submit: PropTypes.bool.isRequired,
+    user_submit: PropTypes.number.isRequired,
   }).isRequired,
 };

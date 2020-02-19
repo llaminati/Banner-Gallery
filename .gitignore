@@ -25,3 +25,4 @@ build/
 dist/
 
 banner-gallery.pem
+config.js

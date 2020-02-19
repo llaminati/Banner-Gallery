@@ -66,5 +66,5 @@ export default ImageDescription;
 ImageDescription.propTypes = {
   date: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  userSubmit: PropTypes.bool.isRequired,
+  userSubmit: PropTypes.number.isRequired,
 };
