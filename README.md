@@ -67,3 +67,7 @@ npm run seed
 npm run build
 npm run start
 ```
+
+### Launch site
+
+After following all the steps above, open a browser and go to http://localhost:3001/
