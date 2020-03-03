@@ -1,8 +1,10 @@
 # Banner Gallery
 
-> Project description
+A banner photo gallery web application for a restaurant listings page
 
-Created a full stack applications for a restaurant reservations page
+[Demo](http://ec2-54-153-49-15.us-west-1.compute.amazonaws.com/)
+
+![Demo](./demo.gif)
 
 ## Related Projects
 
@@ -13,17 +15,29 @@ Created a full stack applications for a restaurant reservations page
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Usage](#usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
 
 ## Usage
 
-> Some usage instructions
+Create a file named config.js and place it within the db folder
+
+**config.js**
+
+```sh
+module.exports = {
+  connectionLimit: 10,
+  user: \\CHOOSE_USERNAME,
+  password: \\CHOOSE_PASSWORD,
+  database: 'banner_images',
+};
+```
 
 ## Requirements
 
-- Node 6.13.0
+- Node 12.14.1
+- MySQL 5.7
 
 ## Development
 
@@ -35,14 +49,19 @@ From within the root directory:
 npm install
 ```
 
-### Seeding database
+### Creating a database with schema
 
 ```sh
 npm run create
+```
+
+### Seeding the database with photos
+
+```sh
 npm run seed
 ```
 
-### Starting webpack and server
+### Build webpack bundle and start server
 
 ```sh
 npm run build
